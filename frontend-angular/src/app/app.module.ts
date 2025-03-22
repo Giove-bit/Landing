@@ -12,8 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login.component';
-import { HomeComponent } from './home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
