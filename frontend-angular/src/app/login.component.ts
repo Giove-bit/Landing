@@ -5,9 +5,18 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   template: `
-    <input [(ngModel)]="username" placeholder="Username">
-    <input [(ngModel)]="password" type="password" placeholder="Password">
-    <button (click)="login()">Login</button>
+    <div style="max-width: 400px; margin: 100px auto;">
+      <h2>Login</h2>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="username">
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="password" type="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </div>
   `
 })
 export class LoginComponent {
@@ -22,8 +31,7 @@ export class LoginComponent {
       password: this.password
     }).subscribe((res: any) => {
       localStorage.setItem('token', res.token);
-      alert('Login success!');
-      this.router.navigate(['/home']); // 🔥 Naviga alla home
+      this.router.navigate(['/home']);
     }, err => alert('Login failed'));
   }
 }
