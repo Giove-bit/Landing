@@ -16,8 +16,14 @@ import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CorrelationInterceptor } from './auth/correlation.interceptor';
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent],
+   providers: [
+      { provide: HTTP_INTERCEPTORS, useClass: CorrelationInterceptor, multi: true }
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,

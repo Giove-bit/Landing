@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -10,11 +12,15 @@ import java.util.Map;
 @Slf4j
 public class TestController {
 
+
     @PostMapping("/posta")
-    public Map<String, String> login(@RequestBody Map<String, String> creds) {
-        if ("giove".equals(creds.get("user"))) {
-            log.info("OK");
-            return Map.of("id", "12345");
+    public ResponseEntity<?> login(@RequestHeader("X-Correlation-ID") String correlationId, @RequestBody Map<String, String> req) {
+        MDC.put("sid", correlationId);
+        if ("giove".equals(req.get("user"))) {
+            Map<String, String> res = Map.of("id", "12345");
+            log.info("Request: {} - Response: {}", req, res);
+            MDC.clear();
+            return ResponseEntity.ok(res);
 
         }
         throw new RuntimeException("Error");
