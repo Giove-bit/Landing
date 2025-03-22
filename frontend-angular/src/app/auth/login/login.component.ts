@@ -4,20 +4,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  template: `
-    <div style="max-width: 400px; margin: 100px auto;">
-      <h2>Login</h2>
-      <mat-form-field appearance="fill" style="width: 100%;">
-        <mat-label>Username</mat-label>
-        <input matInput [(ngModel)]="username">
-      </mat-form-field>
-      <mat-form-field appearance="fill" style="width: 100%;">
-        <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="password" type="password">
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="login()">Login</button>
-    </div>
-  `
+  templateUrl: `./login.component.html`
 })
 export class LoginComponent {
   username = '';
