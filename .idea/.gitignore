@@ -1,38 +1,33 @@
-# Default ignored files
+# ===== IDE Config =====
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+Thumbs.db
 /shelf/
-/workspace.xml
+workspace.xml
 
-
-# ===== BACKEND (Java - Maven) =====
+# ===== BACKEND (Spring Boot - Maven) =====
 /backend-spring/target/
+*.log
 /backend-spring/.classpath
 /backend-spring/.project
 /backend-spring/.settings/
-*.iml
-*.log
-
-# IntelliJ / Eclipse / VSCode config
-.idea/
-*.iws
-*.ipr
-*.iml
-.vscode/
-
-# OS-specific
-.DS_Store
-Thumbs.db
+/backend-spring/.env
 
 # ===== FRONTEND (Angular) =====
 /frontend-angular/node_modules/
 /frontend-angular/dist/
-/frontend-angular/.angular/cache/
-/frontend-angular/.angular/config.json
+/frontend-angular/out-tsc/
+/frontend-angular/.angular/
 /frontend-angular/.env
 
-# npm debug
+# Angular environments
+/frontend-angular/src/environments/environment*.ts
+
+# NPM/Yarn logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Angular environment
-frontend-angular/src/environments/environment*.ts
