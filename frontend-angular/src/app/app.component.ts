@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-root',
-  template: '<app-login></app-login><app-home *ngIf="loggedIn"></app-home>'
+  template: '<router-outlet></router-outlet>'
 })
-export class AppComponent {
-  loggedIn = false;
-}
+export class AppComponent {}
