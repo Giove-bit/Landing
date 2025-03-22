@@ -1,0 +1,10 @@
+cy.intercept('POST', '/api/test/posta', (req) => {
+  expect(req.headers['x-correlation-id']).to.exist;
+}).as('login');
+
+cy.visit('/');
+cy.get('input[placeholder="Username"]').type('giove');
+cy.get('input[placeholder="Password"]').type('pass');
+cy.contains('Login').click();
+
+cy.wait('@login');

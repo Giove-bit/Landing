@@ -2,11 +2,13 @@
     <h2>Login</h2>
     <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Username</mat-label>
-        <input matInput [(ngModel)]="username">
+        <input matInput data-cy="username" [(ngModel)]="username">
     </mat-form-field>
+
     <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="password" type="password">
+        <input matInput data-cy="password" [(ngModel)]="password" type="password">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="login()">Login</button>
+
+    <button mat-raised-button color="primary" data-cy="login-btn" (click)="login()">Login</button>
 </div>
